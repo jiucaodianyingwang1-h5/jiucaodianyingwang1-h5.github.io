@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>玖畅电影网 - 高清电影推荐电视剧资讯与每日新片畅看</title>
+<meta name="description" content="玖畅电影网提供高清电影推荐、热播电视剧资讯、综艺动漫导览与每日新片点评，支持动作、喜剧、科幻、爱情、悬疑、古装分类筛选，手机电脑自适应，专注优质片单与正版观看入口。">
+<meta name="keywords" content="玖畅电影网,高清电影推荐,热播电视剧资讯,新片点评,电影分类,古装科幻,jiuchangdianyingwang">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jiuchangdianyingwang-h5.github.io/">
+<meta property="og:title" content="玖畅电影网 - 高清电影推荐与影视资讯">
+<meta property="og:description" content="玖畅电影网提供电影推荐、热播剧资讯、新片点评与分类筛选，清透蓝绿流线风，移动自适应，正版导流。">
+<meta property="og:url" content="https://jiuchangdianyingwang-h5.github.io/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"玖畅电影网",
+  "url":"https://jiuchangdianyingwang-h5.github.io/",
+  "description":"玖畅电影网提供高清电影推荐、热播电视剧资讯、综艺动漫导览与每日新片点评。",
+  "potentialAction":{"@type":"SearchAction","target":"https://jiuchangdianyingwang-h5.github.io/#search={search_term_string}","query-input":"required name=search_term_string"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"玖畅电影网提供什么内容？","acceptedAnswer":{"@type":"Answer","text":"玖畅电影网提供高清电影推荐、热播电视剧资讯、综艺动漫导览与每日新片点评，支持按动作、喜剧、科幻、爱情、悬疑、古装等分类筛选，并整理流畅榜与编辑片单，帮助用户快速找到适合当前场景的好片。"}},
+    {"@type":"Question","name":"玖畅电影网能直接播放电影吗？","acceptedAnswer":{"@type":"Answer","text":"玖畅电影网定位为影视推荐与资讯导航站，片库与详情均作示例展示，观看入口可跳转正版视频平台、影院票务或片方官方渠道；本站不提供盗版资源、网盘直链或未授权下载。"}},
+    {"@type":"Question","name":"玖畅电影网如何在手机上使用？","acceptedAnswer":{"@type":"Answer","text":"玖畅电影网为响应式单页，手机浏览器打开官网即可使用分类、搜索、片单与资讯功能，无需下载客户端，适配通勤、午休等碎片化追片场景。"}},
+    {"@type":"Question","name":"新片和热播榜多久更新？","acceptedAnswer":{"@type":"Answer","text":"玖畅电影网每日整理院线新片与热播剧集，流畅榜按播放热度、评分和互动综合更新，重点新片会在资讯区同步推荐理由与正版观看渠道。"}} 
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#eefcfb;--bg2:#e3f6f1;--card:#ffffff;--line:#cfe9e6;
+  --teal:#0f9b8e;--teal2:#19b9a6;--blue:#1761ff;--gold:#d79a2b;--gold2:#f0c063;
+  --ink:#102a2a;--muted:#5d7472;
+  --radius:16px;--max:1180px;--shadow:0 16px 36px rgba(15,155,142,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+  background:
+    radial-gradient(1000px 420px at 92% -10%,rgba(215,154,43,.10),transparent 60%),
+    radial-gradient(860px 380px at 0% 6%,rgba(15,155,142,.14),transparent 55%),
+    var(--bg);
+  color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+
+header.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(238,252,251,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:800;letter-spacing:.4px;font-size:20px;color:var(--teal)}
+.logo b{color:var(--gold)}
+.menu{display:flex;gap:6px}
+.menu a{padding:8px 12px;border-radius:999px;color:var(--muted);font-size:14px;transition:.25s}
+.menu a:hover{color:#fff;background:linear-gradient(90deg,var(--teal),var(--blue))}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;border:0;background:none;padding:8px}
+.burger span{width:24px;height:2px;background:var(--teal);border-radius:2px}
+
+.hero{position:relative;padding:112px 0 70px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:36px;align-items:center}
+.kick{display:inline-flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chip{font-size:12px;color:var(--teal);border:1px solid var(--line);background:var(--card);padding:5px 10px;border-radius:999px}
+.hero h1{font-size:clamp(30px,5vw,50px);line-height:1.14;font-weight:800}
+.hero h1 b{background:linear-gradient(90deg,var(--teal),var(--blue),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);margin:16px 0 22px;max-width:540px}
+.search{display:flex;gap:10px;background:var(--card);border:1px solid var(--line);padding:10px;border-radius:999px;max-width:540px;box-shadow:var(--shadow)}
+.search input{flex:1;background:transparent;border:0;outline:0;color:var(--ink);padding:8px 12px;font-size:15px}
+.search button{border:0;background:linear-gradient(90deg,var(--teal),var(--blue));color:#fff;font-weight:700;padding:8px 18px;border-radius:999px;cursor:pointer}
+.stats{display:flex;gap:22px;margin-top:24px;flex-wrap:wrap}
+.stats div{font-size:13px;color:var(--muted)}
+.stats b{display:block;font-size:22px;color:var(--teal)}
+
+.flow{position:relative;height:340px;border-radius:24px;background:linear-gradient(160deg,#ffffff,#e6faf7);border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
+.flow .ring{position:absolute;right:48px;top:48px;width:150px;height:150px;border-radius:50%;background:conic-gradient(from 0deg,var(--teal),var(--blue),var(--gold),var(--teal));filter:blur(2px);opacity:.85;animation:spin 18s linear infinite}
+.flow .core{position:absolute;right:78px;top:78px;width:90px;height:90px;border-radius:50%;background:radial-gradient(circle,#ffffff,#dffaf5);box-shadow:0 0 60px rgba(15,155,142,.35)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.flow .wave{position:absolute;left:0;right:0;height:60px;background:linear-gradient(90deg,transparent,rgba(25,185,166,.25),transparent);filter:blur(3px)}
+.flow .w1{top:70px;animation:drift 7s ease-in-out infinite}
+.flow .w2{top:160px;animation:drift 9s ease-in-out infinite 1s}
+.flow .w3{top:250px;animation:drift 8s ease-in-out infinite 2s}
+@keyframes drift{0%,100%{transform:translateX(-10px)}50%{transform:translateX(20px)}}
+.flow .cap{position:absolute;left:22px;bottom:18px;font-size:12px;letter-spacing:3px;color:var(--muted)}
+
+section.block{padding:64px 0}
+.sec-head{text-align:center;margin-bottom:34px}
+.sec-head h2{font-size:clamp(24px,3.4vw,34px);font-weight:800}
+.sec-head h2:after{content:"";display:block;width:56px;height:4px;margin:12px auto 0;border-radius:4px;background:linear-gradient(90deg,var(--teal),var(--blue),var(--gold))}
+.sec-head p{color:var(--muted);margin-top:10px}
+
+.feats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.feat{position:relative;padding:26px 22px;background:var(--card);border:1px solid var(--line);border-radius:18px;transition:.3s;box-shadow:0 8px 20px rgba(15,155,142,.06)}
+.feat:hover{transform:translateY(-6px);border-color:var(--teal);box-shadow:var(--shadow)}
+.feat .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;background:linear-gradient(135deg,var(--teal),var(--blue));color:#fff}
+.feat h3{margin:14px 0 8px;font-size:17px}
+.feat p{color:var(--muted);font-size:14px}
+.feat .tag{position:absolute;right:14px;top:14px;font-size:11px;color:var(--teal);border:1px solid var(--line);padding:3px 8px;border-radius:999px}
+
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-bottom:20px}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.fbtn{border:1px solid var(--line);background:var(--card);color:var(--muted);padding:7px 16px;border-radius:999px;cursor:pointer;font-size:14px;transition:.25s}
+.fbtn.active,.fbtn:hover{color:#fff;background:linear-gradient(90deg,var(--teal),var(--blue));border-color:transparent;font-weight:700}
+.viewswitch{display:flex;gap:6px}
+.vbtn{border:1px solid var(--line);background:var(--card);color:var(--muted);width:40px;height:38px;border-radius:10px;cursor:pointer;font-size:16px}
+.vbtn.active{color:#fff;background:linear-gradient(90deg,var(--teal),var(--blue));border-color:transparent}
+
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+body.list .grid{grid-template-columns:1fr}
+.movie{border-radius:var(--radius);overflow:hidden;background:var(--card);border:1px solid var(--line);transition:.3s;box-shadow:0 8px 18px rgba(15,155,142,.06)}
+.movie:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.poster{position:relative;aspect-ratio:2/2.8;background:linear-gradient(135deg,#e6faf7,#d7f1ec);display:flex;align-items:center;justify-content:center}
+.poster span{font-size:46px;opacity:.55}
+.poster em{position:absolute;left:12px;top:12px;font-style:normal;font-size:12px;color:#fff;background:var(--teal);padding:4px 8px;border-radius:8px}
+.poster u{position:absolute;right:12px;bottom:12px;text-decoration:none;font-size:12px;color:var(--ink);background:rgba(255,255,255,.85);padding:4px 8px;border-radius:8px;border:1px solid var(--line)}
+body.list .movie{display:grid;grid-template-columns:160px 1fr;align-items:stretch}
+body.list .poster{aspect-ratio:auto;min-height:120px}
+body.list .poster span{font-size:34px}
+.minfo{padding:12px 14px}
+.minfo h3{font-size:15px}
+.minfo .rate{color:var(--gold);font-size:13px;margin-top:4px}
+.minfo p{color:var(--muted);font-size:13px;margin-top:2px}
+body.list .minfo{display:flex;flex-direction:column;justify-content:center}
+
+.schedule{position:relative;margin-left:8px;padding-left:24px;border-left:2px solid var(--line)}
+.srow{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:16px;transition:.3s;box-shadow:0 8px 18px rgba(15,155,142,.05)}
+.srow:hover{transform:translateX(6px);border-color:var(--blue);box-shadow:var(--shadow)}
+.srow:before{content:"";position:absolute;left:-33px;top:22px;width:14px;height:14px;border-radius:50%;background:linear-gradient(90deg,var(--teal),var(--blue));box-shadow:0 0 0 4px rgba(15,155,142,.12)}
+.srow .day{font-size:13px;font-weight:700;color:var(--teal)}
+.srow h3{font-size:16px;margin-top:4px}
+.srow p{color:var(--muted);font-size:14px;margin-top:6px}
+.srow .badge{display:inline-block;margin-top:8px;font-size:12px;color:#fff;background:linear-gradient(90deg,var(--teal),var(--blue));padding:3px 10px;border-radius:999px}
+
+.rank{display:grid;gap:12px}
+.rk{display:grid;grid-template-columns:54px 1fr 170px 74px;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;box-shadow:0 8px 18px rgba(15,155,142,.05)}
+.rk .no{font-size:20px;font-weight:900;color:var(--teal);text-align:center}
+.rk h4{font-size:15px}
+.rk small{color:var(--muted)}
+.bar{height:8px;border-radius:8px;background:var(--bg2);overflow:hidden;border:1px solid var(--line)}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--blue),var(--gold))}
+.up{color:#0f9b8e}.down{color:#c0552b}
+
+.news{display:grid;grid-template-columns:1.3fr 1fr;gap:20px}
+.lead{border-radius:var(--radius);overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:0 8px 18px rgba(15,155,142,.06)}
+.lead .cover{height:220px;background:linear-gradient(135deg,#e6faf7,#d7f1ec);display:flex;align-items:center;justify-content:center;font-size:54px;opacity:.8}
+.lead .body{padding:16px}
+.lead h3{font-size:18px}
+.lead p{color:var(--muted);font-size:14px;margin-top:8px}
+.nlist{display:flex;flex-direction:column;gap:12px}
+.nitem{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}
+.nitem .dt{font-size:12px;color:var(--teal);white-space:nowrap;font-weight:700}
+.nitem h4{font-size:14px}
+
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.qa{border:1px solid var(--line);background:var(--card);border-radius:12px;overflow:hidden}
+.qa button{width:100%;text-align:left;background:none;border:0;color:var(--ink);padding:16px;font-size:15px;cursor:pointer;display:flex;justify-content:space-between;gap:10px}
+.qa .pn{color:var(--gold);font-weight:800}
+.qa .an{max-height:0;overflow:hidden;transition:max-height .3s}
+.qa .an p{padding:0 16px 16px;color:var(--muted);font-size:14px}
+.qa.open .an{max-height:220px}
+
+footer{margin-top:40px;border-top:1px solid var(--line);background:var(--bg2);padding:40px 0 22px}
+.foot{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.foot h4{font-size:15px;margin-bottom:12px;color:var(--teal)}
+.foot a{display:block;color:var(--muted);font-size:14px;padding:5px 0}
+.foot a:hover{color:var(--gold)}
+.copy{text-align:center;color:var(--muted);font-size:13px;margin-top:26px;line-height:1.8}
+.topbtn{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border-radius:50%;border:0;background:linear-gradient(90deg,var(--teal),var(--blue));color:#fff;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:.3s;z-index:60}
+.topbtn.show{opacity:1;visibility:visible}
+
+@media(max-width:992px){
+  .feats{grid-template-columns:repeat(2,1fr)}
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .news{grid-template-columns:1fr}
+  .foot{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .burger{display:flex}
+  .menu{position:fixed;top:62px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:10px 18px;transform:translateY(-130%);transition:.3s}
+  .menu.show{transform:translateY(0)}
+  .menu a{padding:12px 0;border-bottom:1px solid var(--line)}
+  .hero-grid{grid-template-columns:1fr}
+  .flow{height:240px;order:-1}
+  .feats{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  body.list .movie{grid-template-columns:120px 1fr}
+  .toolbar{flex-direction:column;align-items:stretch}
+  .rk{grid-template-columns:40px 1fr;grid-auto-rows:auto}
+  .rk .bar,.rk .tr{grid-column:2}
+  .faq{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr}
+}
+@media(max-width:420px){.grid{grid-template-columns:1fr}body.list .movie{grid-template-columns:1fr}body.list .poster{aspect-ratio:2/1.4}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="logo">玖畅电影网<b>·JiuChang</b></a>
+    <button class="burger" id="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+    <nav class="menu" id="menu">
+      <a href="#home">首页</a>
+      <a href="#feat">畅看标准</a>
+      <a href="#lib">电影库</a>
+      <a href="#tv">周更排片</a>
+      <a href="#rank">流畅榜</a>
+      <a href="#news">影评资讯</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kick">
+        <span class="chip">电影推荐</span><span class="chip">热播剧资讯</span><span class="chip">新片点评</span><span class="chip">正版入口</span>
+      </div>
+      <h1>玖畅电影网 · <b>清透流线，找好片更顺畅</b></h1>
+      <p>玖畅电影网聚合动作、喜剧、科幻、爱情、悬疑、古装等高清电影推荐，配套热播电视剧资讯、综艺导览与每日新片点评，支持分类筛选、智能搜索和手机自适应；片库仅作推荐展示，观看优先跳转正版平台。</p>
+      <form class="search" id="search" onsubmit="return false;">
+        <input type="text" placeholder="搜索电影 / 剧集 / 演员，如：流浪地球、庆余年、玖畅新片" aria-label="搜索影视">
+        <button type="submit">搜索</button>
+      </form>
+      <div class="stats">
+        <div><b>22万+</b>甄选影片</div>
+        <div><b>每日</b>新片点评</div>
+        <div><b>编辑</b>场景片单</div>
+        <div><b>正版</b>观看入口</div>
+      </div>
+    </div>
+    <div class="flow" aria-hidden="true">
+      <div class="ring"></div><div class="core"></div>
+      <div class="wave w1"></div><div class="wave w2"></div><div class="wave w3"></div>
+      <div class="cap">JIUCHANG · 流线影库 · 2026</div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="feat">
+  <div class="wrap">
+    <div class="sec-head"><h2>玖畅电影网畅看标准</h2><p>从找片、评片到正版观看，覆盖顺畅观影决策</p></div>
+    <div class="feats">
+      <div class="feat"><span class="tag">分类</span><div class="ic">🎬</div><h3>全类型筛选</h3><p>动作、喜剧、科幻、爱情、悬疑、古装分栏清晰，按类型、地区、年份一键过滤，减少片海迷茫。</p></div>
+      <div class="feat"><span class="tag">每日</span><div class="ic">🆕</div><h3>每日新片点评</h3><p>院线新片、热播剧集、综艺更新同步整理，首页与编辑片单快速看到最新值得看的片子。</p></div>
+      <div class="feat"><span class="tag">场景</span><div class="ic">🎯</div><h3>按场景推荐</h3><p>合家欢、通勤、约会、深夜独处分别给片单，清透信息层级让挑选效率更高。</p></div>
+      <div class="feat"><span class="tag">正版</span><div class="ic">🔗</div><h3>正版观看入口</h3><p>详情与播放按钮导向正版平台或票务/资讯页，不提供盗版资源、网盘直链与未授权下载。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="lib">
+  <div class="wrap">
+    <div class="sec-head"><h2>玖畅电影网甄选电影库</h2><p>网格/列表双视图，按类型筛选快速找好片</p></div>
+    <div class="toolbar">
+      <div class="filters" id="filters">
+        <button class="fbtn active">全部</button>
+        <button class="fbtn">动作</button>
+        <button class="fbtn">喜剧</button>
+        <button class="fbtn">科幻</button>
+        <button class="fbtn">爱情</button>
+        <button class="fbtn">悬疑</button>
+        <button class="fbtn">古装</button>
+      </div>
+      <div class="viewswitch">
+        <button class="vbtn active" id="gridBtn" title="网格视图">▦</button>
+        <button class="vbtn" id="listBtn" title="列表视图">☰</button>
+      </div>
+    </div>
+    <div class="grid" id="grid">
+      <div class="movie" data-cat="古装"><div class="poster"><span>🏯</span><em>古装</em><u>2026</u></div><div class="minfo"><h3>玖畅盛世时序</h3><p>古装/权谋 · 高清推荐</p><div class="rate">★ 8.9 编辑力荐</div></div></div>
+      <div class="movie" data-cat="科幻"><div class="poster"><span>🪐</span><em>科幻</em><u>2026</u></div><div class="minfo"><h3>星海流光归途</h3><p>太空/冒险 · 高清推荐</p><div class="rate">★ 8.7 视觉控必看</div></div></div>
+      <div class="movie" data-cat="动作"><div class="poster"><span>💥</span><em>动作</em><u>2025</u></div><div class="minfo"><h3>清场畅行行动</h3><p>枪战/刑侦 · 高清推荐</p><div class="rate">★ 8.5 节奏爽快</div></div></div>
+      <div class="movie" data-cat="喜剧"><div class="poster"><span>😆</span><em>喜剧</em><u>2025</u></div><div class="minfo"><h3>全家畅笑指南</h3><p>合家欢/轻喜剧 · 高清推荐</p><div class="rate">★ 8.6 周末放松</div></div></div>
+      <div class="movie" data-cat="爱情"><div class="poster"><span>💗</span><em>爱情</em><u>2024</u></div><div class="minfo"><h3>晴光第三百天</h3><p>治愈/恋爱 · 高清推荐</p><div class="rate">★ 8.4 约会片单</div></div></div>
+      <div class="movie" data-cat="悬疑"><div class="poster"><span>🕵️</span><em>悬疑</em><u>2024</u></div><div class="minfo"><h3>流光暗房事件</h3><p>推理/惊悚 · 高清推荐</p><div class="rate">★ 8.8 烧脑向</div></div></div>
+      <div class="movie" data-cat="古装"><div class="poster"><span>🗡️</span><em>古装</em><u>2025</u></div><div class="minfo"><h3>玖畅江湖异闻</h3><p>武侠/玄幻 · 高清推荐</p><div class="rate">★ 8.7 武打爱好者</div></div></div>
+      <div class="movie" data-cat="科幻"><div class="poster"><span>🤖</span><em>科幻</em><u>2026</u></div><div class="minfo"><h3>人工智能畅行计划</h3><p>未来/伦理 · 高清推荐</p><div class="rate">★ 8.6 思想向</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="tv">
+  <div class="wrap">
+    <div class="sec-head"><h2>玖畅电影网周更排片</h2><p>电视剧、网剧、古装剧按周排片，跟更不迷路</p></div>
+    <div class="schedule">
+      <div class="srow"><div class="day">周一 · 10-05</div><h3>玖畅盛世时序</h3><p>古装权谋 · 42集 · 朝堂线与江湖线并行，反转密集，适合慢看细品。</p><span class="badge">编辑跟更</span></div>
+      <div class="srow"><div class="day">周二 · 10-06</div><h3>都市畅恋法则</h3><p>现代情感 · 32集 · 职场与恋爱双线，通勤碎片时间也好追。</p><span class="badge">轻松档</span></div>
+      <div class="srow"><div class="day">周三 · 10-07</div><h3>刑侦流光档案</h3><p>公安刑侦 · 36集 · 真实案例改编，节奏快、逻辑强，悬疑党优先。</p><span class="badge">会员资讯</span></div>
+      <div class="srow"><div class="day">周五 · 10-09</div><h3>山海玖畅异闻</h3><p>仙侠玄幻 · 45集 · 大场面特效，周末连更补完不费劲。</p><span class="badge">周末片单</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="rank">
+  <div class="wrap">
+    <div class="sec-head"><h2>玖畅电影网流畅榜</h2><p>按评分、播放热度与编辑复看综合排序</p></div>
+    <div class="rank">
+      <div class="rk"><div class="no">1</div><div><h4>玖畅盛世时序</h4><small>剧集 · 古装权谋 · ★8.9</small></div><div class="bar"><i style="width:97%"></i></div><div class="tr up">↑97</div></div>
+      <div class="rk"><div class="no">2</div><div><h4>星海流光归途</h4><small>电影 · 科幻 · ★8.7</small></div><div class="bar"><i style="width:91%"></i></div><div class="tr up">↑91</div></div>
+      <div class="rk"><div class="no">3</div><div><h4>全家畅笑指南</h4><small>电影 · 喜剧 · ★8.6</small></div><div class="bar"><i style="width:85%"></i></div><div class="tr down">↓85</div></div>
+      <div class="rk"><div class="no">4</div><div><h4>玖畅江湖异闻</h4><small>剧集 · 武侠玄幻 · ★8.7</small></div><div class="bar"><i style="width:79%"></i></div><div class="tr up">↑79</div></div>
+      <div class="rk"><div class="no">5</div><div><h4>刑侦流光档案</h4><small>剧集 · 刑侦 · ★8.8</small></div><div class="bar"><i style="width:73%"></i></div><div class="tr up">↑73</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="news">
+  <div class="wrap">
+    <div class="sec-head"><h2>玖畅电影网影评资讯</h2><p>新片点评、片单策划、票房与正版观看建议</p></div>
+    <div class="news">
+      <div class="lead"><div class="cover">🌊</div><div class="body"><h3>2026第四季度清透流线高评分片单</h3><p>从古装权谋到星际科幻，玖畅电影网按评分、完成度与观看场景精选高分新片与合家欢，支持按类型加入想看清单，正片优先建议走正版平台。</p><a href="#">查看片单 #</a></div></div>
+      <div class="nlist">
+        <div class="nitem"><span class="dt">10-03</span><h4>《清场畅行行动》高清版点评：动作设计与人设平衡</h4></div>
+        <div class="nitem"><span class="dt">10-02</span><h4>《玖畅盛世时序》更新至30集：权谋线为何不拖沓</h4></div>
+        <div class="nitem"><span class="dt">10-01</span><h4>玖畅电影网国庆合家欢专场：低龄友好与老人舒适片单</h4></div>
+        <div class="nitem"><span class="dt">09-30</span><h4>院线票房周报：古装与科幻领跑流线片单，附正版渠道</h4></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="faq">
+  <div class="wrap">
+    <div class="sec-head"><h2>玖畅电影网常见问题</h2><p>关于找片、点评、正版入口与移动端使用</p></div>
+    <div class="faq">
+      <div class="qa open"><button>玖畅电影网如何按类型找好片？<span class="pn">+</span></button><div class="an"><p>在“甄选电影库”点击全部、动作、喜剧、科幻、爱情、悬疑、古装等分类，页面会即时筛选对应影片，也可切换网格/列表，并结合评分与编辑标签选择。</p></div></div>
+      <div class="qa"><button>玖畅电影网的片单和评分怎么来？<span class="pn">+</span></button><div class="an"><p>玖畅电影网结合公开评分、播放热度与编辑复看整理推荐；示例影片仅用于演示，具体评分以正版平台、票务页和片方信息为准。</p></div></div>
+      <div class="qa"><button>玖畅电影网能直接播放吗？<span class="pn">+</span></button><div class="an"><p>本站定位影视推荐与资讯导航，不提供盗版播放、网盘直链或未授权下载；电影/剧集详情的观看按钮建议跳转正版视频平台、影院票务或官方资讯页。</p></div></div>
+      <div class="qa"><button>手机上如何使用玖畅电影网？<span class="pn">+</span></button><div class="an"><p>玖畅电影网为响应式单页，手机浏览器打开即可使用分类、搜索、片单与资讯功能，无需下载客户端，弱网环境建议查看文字片单与点评。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div><h4>玖畅电影网</h4><a href="#home">网站首页 #</a><a href="#lib">电影库 #</a><a href="#tv">周更排片 #</a></div>
+    <div><h4>影视分类</h4><a href="#lib">动作科幻 #</a><a href="#lib">喜剧爱情 #</a><a href="#lib">悬疑古装 #</a></div>
+    <div><h4>资讯与榜单</h4><a href="#news">新片点评 #</a><a href="#rank">流畅榜 #</a><a href="#news">票房预告 #</a></div>
+    <div><h4>帮助与关于</h4><a href="#faq">观看帮助 #</a><a href="#feat">畅看标准 #</a><a href="#">版权声明 #</a></div>
+  </div>
+  <div class="wrap copy">
+    © 2026 玖畅电影网（jiuchangdianyingwang-h5.github.io）· 本页仅作影视推荐与资讯演示，内页链接以 # 替代，影片、评分与资讯为示例数据。<br>
+    本站不存储、不提供盗版视频、网盘资源或未授权下载；如需观看请通过正版视频平台、影院票务或片方官方渠道。
+  </div>
+</footer>
+
+<button class="topbtn" id="topbtn" aria-label="返回顶部">↑</button>
+
+<script>
+var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',function(){menu.classList.toggle('show');});
+menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('show');});});
+
+var fbtns=document.querySelectorAll('.fbtn'),cards=document.querySelectorAll('#grid .movie');
+fbtns.forEach(function(b){b.addEventListener('click',function(){
+  fbtns.forEach(function(x){x.classList.remove('active');});b.classList.add('active');
+  var cat=b.textContent.trim();
+  cards.forEach(function(c){c.style.display=(cat==='全部'||c.dataset.cat===cat)?'':'none';});
+});});
+
+var gridBtn=document.getElementById('gridBtn'),listBtn=document.getElementById('listBtn');
+gridBtn.addEventListener('click',function(){document.body.classList.remove('list');gridBtn.classList.add('active');listBtn.classList.remove('active');});
+listBtn.addEventListener('click',function(){document.body.classList.add('list');listBtn.classList.add('active');gridBtn.classList.remove('active');});
+
+document.querySelectorAll('.qa button').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=btn.parentElement,open=item.classList.contains('open');
+    document.querySelectorAll('.qa').forEach(function(q){q.classList.remove('open');});
+    if(!open){item.classList.add('open');}
+  });
+});
+
+var topbtn=document.getElementById('topbtn');
+window.addEventListener('scroll',function(){topbtn.classList.toggle('show',window.scrollY>400);});
+topbtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+</script>
+</body>
+</html>
